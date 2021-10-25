@@ -1,19 +1,57 @@
 <html>
+
 <head>
-    <title>IOTA Discord Invite</title>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157154465-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-157154465-1');
-	</script>
+    <title>PSS Discord Invite</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157154465-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-157154465-1');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
+    <link rel="manifest" href="static/site.webmanifest">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Primate Social Society">
+    <meta property="og:title" content="NFT collection for the Sophisticated and Social Apes">
+    <meta property="og:url" content="https://www.primatesocialsociety.com/">
+    <meta property="og:description"
+        content="Primate Social Society consists of 10,000 randomly generated Apes living on the Ethereum blockchain. These Apes can be found with a variety of different colors, outfits, and faces but no two are alike. Each Ape brings their own style to the Primate Social Society with unique hats, hair, clothing, and faces from a total of 113 different attributes for a combined 129,489,408 combinations.">
+    <meta property="og:image"
+        content="https://www.primatesocialsociety.com/assets/images/Primate-Social-Society_TwitterCard.png">
+
+    <meta name="twitter:site" content="@PrimatesSociety">
+    <meta name="twitter:title" content="NFT collection for the Sophisticated and Social Apes">
+    <meta name="twitter:description"
+        content="Primate Social Society consists of 10,000 randomly generated Apes living on the Ethereum blockchain. These Apes can be found with a variety of different colors, outfits, and faces but no two are alike. Each Ape brings their own style to the Primate Social Society with unique hats, hair, clothing, and faces from a total of 113 different attributes for a combined 129,489,408 combinations.">
+    <meta name="twitter:url" content="https://twitter.com/PrimatesSociety">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image"
+        content="https://www.primatesocialsociety.com/assets/images/Primate-Social-Society_OpenGraphCard.jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <style type="text/css">
-        html { height: 100%; }
-        body { margin: 0; padding: 0; background: linear-gradient(210deg,#22b1ab,#18817c) no-repeat; color: white; font-family: Nunito Sans,sans-serif !important; box-sizing: border-box;}
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #292424;
+            color: white;
+            font-family: 'Work Sans', sans-serif !important;
+            box-sizing: border-box;
+        }
+
         .container {
             box-sizing: border-box;
             margin: 50px auto;
@@ -23,6 +61,7 @@
             text-align: center;
             line-height: 1.15em;
         }
+
         h1 {
             font-size: 36px;
             font-weight: 200;
@@ -30,31 +69,34 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <img src="static/logo.png" alt="IOTA" />
+        <img src="static/logo.svg" alt="Primate Social Society" />
         <h1>Discord Invite</h1>
         <form action="/invite" method="POST">
-            <div class="g-recaptcha" style="display: inline-block;" id="captcha" data-sitekey="{{key}}" data-callback=onSubmit></div>
+            <div class="g-recaptcha" style="display: inline-block;" id="captcha" data-sitekey="{{key}}"
+                data-callback=onSubmit></div>
         </form>
     </div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
 
-    function onSubmit(token) {
-        var form = new FormData();
-        form.append('token', token);
-        fetch('/invite', {method: 'post', body: form}).then(function(resp) {
-          resp.json().then(function(data) {
-              console.log('resp', data);
-              if(data.success) {
-                  window.location.href = 'https://discord.gg/' + data.url;
-              } else {
-                  alert('Unable to generate a invite, please try again later!');
-              }
-          });
-        });
-    }
+        function onSubmit(token) {
+            var form = new FormData();
+            form.append('token', token);
+            fetch('/invite', { method: 'post', body: form }).then(function (resp) {
+                resp.json().then(function (data) {
+                    console.log('resp', data);
+                    if (data.success) {
+                        window.location.href = 'https://discord.gg/' + data.url;
+                    } else {
+                        alert('Unable to generate a invite, please try again later!');
+                    }
+                });
+            });
+        }
     </script>
 </body>
+
 </html>
