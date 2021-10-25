@@ -1,1 +1,1 @@
-web FLASK_APP=server.py flask run --port=$PORT
+web waitress-serve --port=$PORT --call server:create_app
